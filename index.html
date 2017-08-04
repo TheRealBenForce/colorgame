@@ -21,11 +21,13 @@
     <h1 id="a">Color Picker Game</h1>
     <h3>Not functional yet</h3>
 
-    <button id="b1" type="button" class="btn btn-block">Button 1</button>
-    <button id="b2" type="button" class="btn btn-block">Button 2</button>
-    <button id="b3" type="button" class="btn btn-block">Button 3</button>
-    <button id="b4" type="button" class="btn btn-block">Button 4</button>
+    <button onclick="checkColor(this.id, a.color)"  id="b1" type="button" class="btn btn-block">Button 1</button>
+    <button onclick="checkColor(this.id, a.color)"  id="b2" type="button" class="btn btn-block">Button 2</button>
+    <button onclick="checkColor(this.id, a.color)"  id="b3" type="button" class="btn btn-block">Button 3</button>
+    <button onclick="checkColor(this.id, a.color)"  id="b4" type="button" class="btn btn-block">Button 4</button>
 
+    <p id="result"></p>
+    <p id="color"></p>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -49,6 +51,18 @@
         return colorArray
       }
 
+      function checkColor(button, main) {
+        var b = document.getElementById(button).style
+        document.getElementById("color").innerHTML = b.background
+
+        if (b.background == main) {
+          document.getElementById("result").innerHTML = "Correct. Waiting 2 seconds."
+        } else {
+          document.getElementById("result").innerHTML = "Incorrect. Waiting 2 seconds."
+        }
+        setTimeout(function(){ location.reload(); }, 3000);
+      }
+
 
       var randomColorArray = randomColorArray()
       var a = document.getElementById("a").style
@@ -62,6 +76,7 @@
       b2.background = randomColorArray[1]
       b3.background = randomColorArray[2]
       b4.background = randomColorArray[3]
+
     </script>
   </body>
 </html>
