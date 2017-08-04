@@ -18,13 +18,13 @@
     <![endif]-->
   </head>
   <body>
-    <h1>Color Picker Game</h1>
+    <h1 id="a">Color Picker Game</h1>
     <h3>Not functional yet</h3>
 
-    <button  id="id1" onclick="myFunction()" type="button" class="btn btn">Button 1</button>
-    <button onclick="myFunction()" type="button" class="btn btn-default">Button 2</button>
-    <button onclick="myFunction()" type="button" class="btn btn-default">Button 3</button>
-    <button onclick="myFunction()" type="button" class="btn btn-default">Button 4</button>
+    <button id="b1" type="button" class="btn btn">Button 1</button>
+    <button id="b2" type="button" class="btn btn">Button 2</button>
+    <button id="b3" type="button" class="btn btn">Button 3</button>
+    <button id="b4" type="button" class="btn btn">Button 4</button>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -38,9 +38,16 @@
         }
         return c;
     }
-
-    var a = document.getElementById("id1").style;
-    a.background = randomColor();
+    var a = document.getElementById("a").style;
+    var b1 = document.getElementById("b1").style;
+    var b2 = document.getElementById("b2").style;
+    var b3 = document.getElementById("b3").style;
+    var b4 = document.getElementById("b4").style;
+    a.color = randomColor();
+    b1.background = randomColor();
+    b2.background = randomColor();
+    b3.background = randomColor();
+    b4.background = randomColor();
     </script>
   </body>
 </html>
