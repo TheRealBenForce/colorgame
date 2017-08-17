@@ -9,6 +9,12 @@
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Custom CSS -->
+    <link href="css/custom.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -18,20 +24,18 @@
     <![endif]-->
   </head>
   <body>
+
     <h1 id="a">Pick the right color to match this text.</h1>
     <h3>Work in progress</h3>
-
-    <button onclick="checkColor(this.id, a.color)"  id="b1" type="button" class="btn btn-block">Button 1</button>
-    <button onclick="checkColor(this.id, a.color)"  id="b2" type="button" class="btn btn-block">Button 2</button>
-    <button onclick="checkColor(this.id, a.color)"  id="b3" type="button" class="btn btn-block">Button 3</button>
-    <button onclick="checkColor(this.id, a.color)"  id="b4" type="button" class="btn btn-block">Button 4</button>
+    <div class="btn-group-vertical btn-block" style="width: 85%;">
+      <button onclick="checkColor(this.id, a.color)"  id="b1" type="button" class="btn btn-block"></button>
+      <button onclick="checkColor(this.id, a.color)"  id="b2" type="button" class="btn btn-block"></button>
+      <button onclick="checkColor(this.id, a.color)"  id="b3" type="button" class="btn btn-block"></button>
+      <button onclick="checkColor(this.id, a.color)"  id="b4" type="button" class="btn btn-block"></button>
+    </div>
 
     <p id="result"></p>
     <p id="color"></p>
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
       function randomColor() {
         var letters = '0123456789ABCDEF';
