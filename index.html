@@ -36,6 +36,12 @@
 
     <p id="result"></p>
     <p id="color"></p>
+    <button onclick="arrayToString(randomColorArrayAlt)">Try it</button>
+    <p id="demo"></p>
+
+    <script src="js/Please.js" charset="utf-8"></script>
+    <script src="js/palette.js" charset="utf-8"></script>
+
     <script type="text/javascript">
       function randomColor() {
         var letters = '0123456789ABCDEF';
@@ -44,15 +50,6 @@
           color += letters[Math.floor(Math.random() * 16)];
         }
         return color;
-      }
-
-      function randomColorArray() {
-        var len = 4
-        var colorArray = [];
-        for (var i = 0; i < len; i++) {
-          colorArray[i] = randomColor()
-        }
-        return colorArray
       }
 
       function checkColor(button, main) {
@@ -67,7 +64,27 @@
         setTimeout(function(){ location.reload(); }, 3000);
       }
 
-      var randomColorArray = randomColorArray()
+      function arrayToString(a) {
+          a.toString();
+          document.getElementById("demo").innerHTML = a;
+      }
+
+      function addHashtag(a) {
+        for(var i=0;i<a.length;i++){
+          a[i]="#"+a[i];
+        }
+      }
+
+      var randomColorArray = Please.make_color({
+        colors_returned: 4,
+        golden: false
+      })
+
+      var randomColorArrayAlt = (palette('sequential', 4));
+      for (var i=randomColorArrayAlt.length; i--;) {
+          randomColorArrayAlt[i] = '#' + randomColorArrayAlt[i];
+      }
+
       var a = document.getElementById("a").style
       var b1 = document.getElementById("b1").style
       var b2 = document.getElementById("b2").style
