@@ -24,7 +24,6 @@
     <![endif]-->
   </head>
   <body>
-
     <h1 id="a">Pick the right color to match this text.</h1>
     <h3>Work in progress</h3>
     <div class="btn-group-vertical btn-block" style="width: 85%;">
@@ -36,21 +35,15 @@
 
     <p id="result"></p>
     <p id="color"></p>
-    <button onclick="arrayToString(randomColorArrayAlt)">Try it</button>
+    <button onclick="arrayToString(randomColorArray)">Try it</button>
     <p id="demo"></p>
 
+    <!--
     <script src="js/Please.js" charset="utf-8"></script>
     <script src="js/palette.js" charset="utf-8"></script>
-
+    -->
+    <script src="js/randomColor.js" charset="utf-8"></script>
     <script type="text/javascript">
-      function randomColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
-        for (var i = 0; i < 6; i++) {
-          color += letters[Math.floor(Math.random() * 16)];
-        }
-        return color;
-      }
 
       function checkColor(button, main) {
         var b = document.getElementById(button).style
@@ -75,23 +68,19 @@
         }
       }
 
-      var randomColorArray = Please.make_color({
-        colors_returned: 4,
-        golden: false
-      })
-
-      var randomColorArrayAlt = (palette('sequential', 4));
-      for (var i=randomColorArrayAlt.length; i--;) {
-          randomColorArrayAlt[i] = '#' + randomColorArrayAlt[i];
-      }
-
       var a = document.getElementById("a").style
       var b1 = document.getElementById("b1").style
       var b2 = document.getElementById("b2").style
       var b3 = document.getElementById("b3").style
       var b4 = document.getElementById("b4").style
+      var leadColor = randomColor()
+      var randomColorArray = randomColor({
+        count: 4
+      })
 
-      a.color = randomColorArray[Math.floor(Math.random()*randomColorArray.length)];
+      randomColorArray[0] = leadColor
+      randomColorArray = randomColorArray.sort()
+      a.color = leadColor
       b1.background = randomColorArray[0]
       b2.background = randomColorArray[1]
       b3.background = randomColorArray[2]
