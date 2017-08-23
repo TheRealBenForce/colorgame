@@ -1,3 +1,8 @@
 .btn {
   height: 60px;
 }
+
+.center{
+  margin: auto;
+  width: 85%;
+}
