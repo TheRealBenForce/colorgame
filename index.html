@@ -24,23 +24,24 @@
     <![endif]-->
   </head>
   <body>
+
     <div class="center">
-
-    <h1 class="center">Welcome to the color game!</h1>
-    <div class="btn-group-vertical btn-block center">
-      <button type="button" id="a" class="btn btn-block center"></button>
-      <h3 class="center">Pick the color below that matches the color above.</h3>
-      <button onclick="checkColor(randomColorArray[0], leadColor)"  id="b1" type="button" class="btn btn-block"></button>
-      <button onclick="checkColor(randomColorArray[1], leadColor)"  id="b2" type="button" class="btn btn-block"></button>
-      <button onclick="checkColor(randomColorArray[2], leadColor)"  id="b3" type="button" class="btn btn-block"></button>
-      <button onclick="checkColor(randomColorArray[3], leadColor)"  id="b4" type="button" class="btn btn-block"></button>
+      <h1 class="">Welcome to the color game!</h1>
+      <div class="btn-group-vertical btn-block">
+        <button type="button" id="a" class="btn btn-block"></button>
+        <br>
+        <h3 class="">Pick the color below that matches the color above.</h3>
+        <button onclick="checkColor(randomColorArray[0], leadColor)"  id="b1" type="button" class="btn btn-block"></button>
+        <button onclick="checkColor(randomColorArray[1], leadColor)"  id="b2" type="button" class="btn btn-block"></button>
+        <button onclick="checkColor(randomColorArray[2], leadColor)"  id="b3" type="button" class="btn btn-block"></button>
+        <button onclick="checkColor(randomColorArray[3], leadColor)"  id="b4" type="button" class="btn btn-block"></button>
+      </div>
+        <p id="result"></p>
+        <p id="color"></p>
+        <button onclick="arrayToString(randomColorArray)">Debug</button>
+        <p id="demo"></p>
     </div>
 
-    <p id="result"></p>
-    <p id="color"></p>
-    <button onclick="arrayToString(randomColorArray)">Debug</button>
-    <p id="demo"></p>
-    </div>
 
     <!--
     <script src="js/Please.js" charset="utf-8"></script>
