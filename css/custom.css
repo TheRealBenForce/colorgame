@@ -7,3 +7,7 @@
   width: 85%;
   text-align: center;
 }
+
+.btn.disabled{
+  opacity: 1;
+}
